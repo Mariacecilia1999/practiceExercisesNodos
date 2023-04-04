@@ -2,27 +2,41 @@
 
 // Recordá que luego de crear los elementos deben agregarse al documento o a algún otro elemento que se encuentre en el mismo.
 
-// Ejercicio 2: Creación de listas
-// Crear un elemento desde el DOM de tipo ol
+// Ejercicio 2: Listas anidadas
+// Replica la siguiente estructura HTML creando nodos mediante javascript
 
-// Asignarle 3 elementos de tipo li, con lo siguientes textos:
-
-// Home
-// Nosotros
-// Contacto
+// <ul>
+//   <li>Verduras</li>
+//   <li>Garbanzos</li>
+//   <li>
+//     Frutas
+//     <ul>
+//       <li>Manzanas</li>
+//       <li>Naranjas</li>
+//       <li>Bananas</li>
+//       <li>Frutillas</li>
+//     </ul>
+//   </li>
+// </ul>
 
 const create = tag => document.createElement(tag)
 const $ = selector => document.querySelector(selector)
 const $$ = selector => document.querySelectorAll(selector)
+const body = $('body')
 
-const exerciseTwo = (value) =>{
-   const body = $('body')
-   const ul = create('ul')
-   body.appendChild(ul)
-   value.forEach(menu => {
-      const li = create('li')
-      li.innerText += menu
-      ul.appendChild(li)
-   });
+const nestedList = () =>{
+   body.innerHTML = `<ul>
+     <li>Verduras</li>
+     <li>Garbanzos</li>
+     <li>
+       Frutas
+       <ul>
+         <li>Manzanas</li>
+         <li>Naranjas</li>
+         <li>Bananas</li>
+         <li>Frutillas</li>
+       </ul>
+     </li>
+   </ul>`
 }
-exerciseTwo(['Home', 'Nosotros', 'Contacto'])
+nestedList()
