@@ -15,7 +15,14 @@ const create = tag => document.createElement(tag)
 const $ = selector => document.querySelector(selector)
 const $$ = selector => document.querySelectorAll(selector)
 
-const exerciseTwo = () =>{
-
+const exerciseTwo = (value) =>{
+   const body = $('body')
+   const ul = create('ul')
+   body.appendChild(ul)
+   value.forEach(menu => {
+      const li = create('li')
+      li.innerText += menu
+      ul.appendChild(li)
+   });
 }
-exerciseTwo()
+exerciseTwo(['Home', 'Nosotros', 'Contacto'])
