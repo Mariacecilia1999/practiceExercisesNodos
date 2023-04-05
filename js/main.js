@@ -21,6 +21,15 @@ const tasks = (values) =>{
       const button = document.createElement('button')
       li.appendChild(button)
       button.innerText = 'Delete'
+      button.classList.add('deleteItem')
+      const deleteItemClass = document.querySelectorAll('.deleteItem')
+      for(const buttonDelete of deleteItemClass){
+         //console.log(buttonDelete)
+         buttonDelete.onclick = function(){
+            console.log(buttonDelete.parentNode)
+            buttonDelete.parentNode.remove()
+         }
+      }
    }
 }
 tasks(tareas)
