@@ -18,6 +18,9 @@ const tasks = (values) =>{
       const li = document.createElement('li')
       li.innerHTML += task
       ul.appendChild(li)
+      const button = document.createElement('button')
+      li.appendChild(button)
+      button.innerText = 'Delete'
    }
 }
 tasks(tareas)
